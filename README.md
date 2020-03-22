@@ -8,7 +8,7 @@
 node >=12
 ```
 
-# #安装
+## 安装
 
 ```
 cd app && npm install
