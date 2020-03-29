@@ -5,13 +5,20 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
-// import Login from "./views/Login.vue";
-// import Home from "./views/Home.vue";
+import { mapMutations } from "vuex";
 
 export default {
   name: "app",
-  components: {}
+  components: {},
+  methods: {
+    ...mapMutations(["updateUrl"])
+  },
+  watch: {
+    $route(to, from) {
+      this.updateUrl(to.path);
+      console.log(from.path);
+    }
+  }
 };
 </script>
 

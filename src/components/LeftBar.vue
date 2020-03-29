@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "LeftBar",
@@ -41,10 +41,7 @@ export default {
       this.$router.push({
         path: url
       });
-
-      this.updateUrl(url);
-    },
-    ...mapMutations(["updateUrl"])
+    }
   },
   computed: {
     ...mapState(["currentUrl"])

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
 export default {
   name: "TopBar",
   data: () => ({
@@ -17,10 +16,7 @@ export default {
       this.$router.push({
         path: url
       });
-
-      this.updateUrl(url);
-    },
-    ...mapMutations(["updateUrl"])
+    }
   }
 };
 </script>
