@@ -24,8 +24,7 @@ import { time2str } from "../utils";
 export default {
   name: "FinStat",
   data: () => ({
-    isSubmit: false,
-    showGra: false
+    isSubmit: false
   }),
   computed: {
     seDate: {
@@ -38,6 +37,9 @@ export default {
       set(dates) {
         this.updateTime(dates.map(date => (date === "" ? "" : date.getTime())));
       }
+    },
+    showGra() {
+      return this.finData.xAxis[0].data.length;
     },
     ...mapState({
       time: "finTime",
@@ -105,7 +107,6 @@ export default {
           data.series[5].data = newData.a;
 
           that.updateData(data);
-          that.showGra = true;
         })
         .catch(() => {
           that.$Message.error({
