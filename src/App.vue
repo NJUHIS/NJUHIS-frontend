@@ -14,9 +14,8 @@ export default {
     ...mapMutations(["updateUrl"])
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       this.updateUrl(to.path);
-      console.log(from.path);
     }
   }
 };

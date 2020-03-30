@@ -54,6 +54,7 @@ export default {
   height: 100%;
   width: 13rem;
   box-sizing: border-box;
+  padding-top: 1rem;
 
   background: white;
   display: flex;
