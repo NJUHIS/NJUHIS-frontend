@@ -4,7 +4,9 @@
     <div class="box">
       <LeftBar class="left-bar" />
       <div class="content-box">
-        <router-view></router-view>
+        <router-view>
+
+        </router-view>
       </div>
     </div>
   </div>
@@ -33,7 +35,7 @@ export default {
     const token = document.cookie.split("=")[1];
     if (token !== "testToken") {
       this.$router.replace({
-        path: "/login"
+        path: "/"
       });
     }
   },

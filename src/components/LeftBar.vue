@@ -30,10 +30,25 @@ export default {
         name: "职工统计",
         url: "/staff"
       },
-      {
-        name: "我的信息",
-        url: "/my"
-      }
+      // {
+      //   name: "我的信息",
+      //   url: "/my"
+      // }
+
+        {
+            name: "病历查找",
+            url: "/bd"
+        }
+        ,
+        {
+            name: "收费单查询",
+            url: "/bd1"
+        }
+        ,
+        {
+            name: "检查单查询",
+            url: "/bd2"
+        }
     ]
   }),
   methods: {

@@ -39,7 +39,7 @@ export default {
       });
     }
   },
-  created() {
+  created(){
     //鉴权
     const token = document.cookie.split("=")[1];
     if (token === "testToken") {

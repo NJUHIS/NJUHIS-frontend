@@ -8,7 +8,10 @@ import FinStat from "../components/FinStat.vue";
 import PatStat from "../components/PatStat.vue";
 import Staff from "../components/Staff.vue";
 import My from "../components/My.vue";
-
+import Bd from "../components/Bd.vue";
+import bd1 from "../components/bd1.vue";
+import bd2 from "../components/bd2.vue";
+import bdinfo from "../components/bdinfo.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -37,6 +40,25 @@ const routes = [
         path: "/my",
         component: My
       }
+        ,
+        {
+            path: "/bd",
+            component: Bd
+        }
+        ,
+        {
+            path: "/bd1",
+            component: bd1
+        }
+        ,
+        {
+            path: "/bd2",
+            component: bd2
+        },
+        {
+            path: "/bdinfo/:id'",
+            component: bdinfo
+        },
     ]
   },
   {
