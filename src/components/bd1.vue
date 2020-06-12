@@ -74,26 +74,48 @@
                 v-show="this.isshow"
         >
         </el-pagination>
-        <div class="detail" v-show="!this.isshow" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)">
+        <div class="detail" v-show="!this.isshow" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); width:600px; height:800px" >
             <el-row>
                 <div class="book-content">
                     <div>
+                        <el-row>
+                            <el-col :span="24">
+                                <div class="grid-content bg-purple-light">
                         <div class="sku-name">
                             收费详情
                         </div>
-                        <p class="p-author">
-                            患者姓名：{{this.register.realname}}
-                        </p>
-                        <p class="p-author">
-                            发票号：{{this.register.invoice.invoicenum}}
-                        </p>
-
+                                </div>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="8"><div class="grid-content bg-purple-light">
+                                <p class="p-author">
+                                    患者姓名：{{this.register.realname}}
+                                </p>
+                            </div>
+                            </el-col>
+                            <el-col :span="8"><div class="grid-content bg-purple-light">
+                                <p class="p-author">
+                                    发票号：{{this.register.invoice.invoicenum}}
+                                </p>
+                            </div></el-col>
+                            <el-col :span="8"><div class="grid-content bg-purple-light">
+                                <div class="p-author">
+                                    就诊时间：{{this.register.invoice.creationtime}}
+                                </div>
+                            </div>
+                            </el-col>
+                        </el-row>
                     </div>
-
-                    <div class="p-author">
-                        就诊时间：{{this.register.invoice.creationtime}}
-                    </div>
-                    <p>收费单:</p>
+                    <el-row>
+                        <el-col :span="24">
+                            <div class="grid-content bg-purple-light">
+                                <div class="sku-name">
+                                    收费单列表
+                                </div>
+                            </div>
+                        </el-col>
+                    </el-row>
                     <el-table
                             :data="this.register.patientCostsList"
                             stripe>
@@ -106,12 +128,12 @@
                         <el-table-column
                                 prop="price"
                                 label="单价"
-                                width="120">
+                                width="180">
                         </el-table-column>
                         <el-table-column
                                 prop="state"
                                 label="状态"
-                                width="120"
+                                width="180"
                                 :formatter="stateFormatter">
                         </el-table-column>
                     </el-table>
@@ -199,5 +221,39 @@
         width: 350px;
         height: 50px;
         margin-top: 20px;
+    }
+    .el-row {
+        margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .el-col {
+        border-radius: 4px;
+    }
+    .bg-purple-dark {
+        background: #99a9bf;
+    }
+    .bg-purple {
+        background: #d3dce6;
+    }
+    .bg-purple-light {
+        background: #e5e9f2;
+    }
+    .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+    }
+    .row-bg {
+        padding: 10px 0;
+        background-color: #f9fafc;
+    }
+    .p-author {
+        font-size: 20px;
+        color: #4333f7;
+    }
+    .sku-name{
+        font-size: 24px;
+        color:#FF0000;
     }
 </style>

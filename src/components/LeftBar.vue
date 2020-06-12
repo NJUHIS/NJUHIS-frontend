@@ -87,6 +87,7 @@ export default {
   padding-left: 2rem;
   transition: all 300ms ease-in-out;
   cursor: pointer;
+  font-size: 18px;
 }
 .left-bar > div.chosen {
   background: #f0faff;

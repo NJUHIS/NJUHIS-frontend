@@ -30,7 +30,7 @@ export default {
   height: 4rem;
   background: #515a6e;
   box-sizing: border-box;
-
+font-size: 24px;
   padding: 0 4rem;
   color: rgba(255, 255, 255, 0.7);
 }

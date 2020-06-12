@@ -84,38 +84,90 @@
 
                     <div class="book-content">
                         <div>
+                            <el-row>
+                                <el-col :span="24">
+                                    <div class="grid-content bg-purple-light">
                             <div class="sku-name">
                                检查单详情
                             </div>
-                            <p class="p-author">
+                                    </div>
+                                </el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col :span="8">
+                                    <div class="grid-content bg-purple-light">
+                                      <p class="p-author">
                                 患者姓名：{{this.name}}
-                            </p>
-                            <p class="p-author">
-                                门诊医生：{{this.doctor}}
-                            </p>
+                                    </p>
+                                </div>
+                                </el-col>
+                                <el-col :span="8">
+                                    <div class="grid-content bg-purple-light">
+                                         <p class="p-author">
+                                             门诊医生：{{this.doctor}}
+                                         </p>
+                                     </div>
+                                </el-col>
 
+                                <el-col :span="8">
+                                    <div class="grid-content bg-purple-light">
+                                        <div class="p-author">
+                                        就诊时间：{{this.date}}
+                                         </div>
+                                     </div>
+                                </el-col>
+                                </el-row>
                         </div>
+                        <el-row>
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-light"> <p >
+                                    患者主述：{{this. medicalRecord.medicalReadme}}
+                                </p>
+                                </div>
+                            </el-col>
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-light"> <p >
+                                    诊断结果：{{this. medicalRecord.medicalDiagnosis}}
+                                </p>
+                                </div>
+                            </el-col>
 
-                            <div class="p-author">
-                                就诊时间：{{this.date}}
-                            </div>
-                        <p >
-                        患者主述：{{this. medicalRecord.medicalReadme}}
-                        </p>
-                        <p >
-                            诊断结果：{{this. medicalRecord.medicalDiagnosis}}
-                        </p>
-                        <p >
-                            体格检查：{{this. medicalRecord.medicalPhysique}}
-                        </p>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-light"><p >
+                                    体格检查：{{this. medicalRecord.medicalPhysique}}
+                                </p>
+                                </div>
+                            </el-col>
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-light"><div>
+                                    <p>疾病诊断:</p>
+                                    <div v-for="i in this.medicalRecord.diagnosisList" :key="i">
+                                        <p>{{i.disease.diseasename}}</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </el-col>
+
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <div class="grid-content bg-purple-light">
+
+                                    <div class="sku-name">
+                                        药品清单
+                                    </div>
+                                </div>
+                            </el-col>
+
+
+                        </el-row>
+
+
+
                         <div>
-                            <p>疾病诊断:</p>
-                            <div v-for="i in this.medicalRecord.diagnosisList" :key="i">
-                                <p>{{i.disease.diseasename}}</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p>药品单:</p>
+
                                 <el-table
                                         :data="this.prescription.prescriptionDetailedList"
                                         stripe>
@@ -288,5 +340,35 @@
         margin-top: 20px;
         color: #999;
         font-size: 14px;
+    }
+    .el-row {
+        margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .el-col {
+        border-radius: 4px;
+    }
+    .bg-purple-dark {
+        background: #99a9bf;
+    }
+    .bg-purple {
+        background: #d3dce6;
+    }
+    .bg-purple-light {
+        background: #e5e9f2;
+    }
+    .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+    }
+    .row-bg {
+        padding: 10px 0;
+        background-color: #f9fafc;
+    }
+    .p-author {
+        font-size: 20px;
+        color: #4333f7;
     }
 </style>

@@ -77,15 +77,16 @@
                             :data="this.checkapply.checkDetailedList"
                             stripe>
                         <el-table-column
-                                prop="checkprojid"
-                                label="项目id"
+                                prop="fmedItem.itemname"
+                                label="检查名称"
                                 width="180">
 
                         </el-table-column>
                         <el-table-column
                                 prop="identification"
-                                label="录入时间"
-                                width="120">
+                                label="结果录入时间"
+                                width="180"
+                                :formatter="timeFormatter">
                         </el-table-column>
                         <el-table-column
                                 prop="result"
@@ -95,7 +96,7 @@
                         </el-table-column>
                         <el-table-column
                                 prop="price"
-                                label="项目单价"
+                                label="费用"
                                 width="180"
                         >
                         </el-table-column>

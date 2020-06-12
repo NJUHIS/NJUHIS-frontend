@@ -1,18 +1,25 @@
 <template>
     <div>
-        <el-collapse v-model="activeNames" :data="List" @change="handleChange">
+        <el-collapse v-model="activeNames" :data="List" @change="handleChange" class="cover">
 
             <div v-for="o in this.List" :key="o">
             <el-collapse-item  class="depL">
                 <template slot="title">
-                    {{o.typeName}}
+                    <div class="staff">
+                        ·  {{o.typeName}}
+                    </div>
+
                 </template>
                 <el-collapse v-model="activeNames"
-                             @change="handleChange">
+                             @change="handleChange" class="depP">
                     <div v-for="os in o.departmentList" :key="os">
                         <el-collapse-item class="dep">
                             <template slot="title">
+                                <div class="staff1">
+
+
                                 ·····{{os.deptname}}
+                                </div>
                             </template>
                             <div v-for="osa in os.userList" :key="osa">
                             <el-col :span="6">
@@ -127,7 +134,27 @@
 }
 .depL{
     font-weight:bold;
-
-    solid-color:#E6A23C
+    solid-color:#E6A23C;
+    padding: 0 0rem;
+    margin-top: 0.5rem;
+    margin-left: -1rem;
 }
+.depP{
+    font-weight:bold;
+    font-size: 24px;
+    solid-color:#E6A23C;
+    padding: 0 0rem;
+    margin-top: 0.5rem;
+    margin-left: -1rem;
+}
+.staff{
+    font-size: 24px;
+    }
+.staff1{
+    font-size: 18px;
+}
+.cover{
+    height: 200px;
+    width: 1000px;
+    }
 </style>
